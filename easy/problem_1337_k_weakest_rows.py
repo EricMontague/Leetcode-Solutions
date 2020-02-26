@@ -5,7 +5,10 @@
 #Although, I think that since in the worst case, since k can equal m
 #the time complexity might be able to be expressed as O(mlogn + mlogm)
 
+#More Optimal solution:
 #https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/discuss/496713/Python-One-Liner-using-Sorting
+
+
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         counter = {}
