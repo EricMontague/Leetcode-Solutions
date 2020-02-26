@@ -1,5 +1,5 @@
 # Leetcode-Solutions
-This repository contains my solutions to questions on Leetcode along with time and space complexity breakdowns for each solution.
+As I'm preparing in the process of preparing for coding interviews, I wanted to make a repository of Leetcode questions and solutions that I've done along the way. All of the solutions I post will include time and space complexity analysis as well as a breakdown of the intuition behind the solution. Hopefully as this repo grows, it can help other people who are going down the same path as me.
 
 <br>
 
