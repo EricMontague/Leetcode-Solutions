@@ -73,8 +73,8 @@ from collections import Counter, deque
 
 
 class QueueItem:
-    def __init__(self, key, count):
-        self.key = key
+    def __init__(self, data, count):
+        self.data = data
         self.count = count
         
     def __lt__(self, other):
@@ -91,7 +91,7 @@ class Solution:
         return chars
         
     def build_queue(self, counts):
-        priority_queue = [QueueItem(key, count) for key, count in counts.items()]
+        priority_queue = [QueueItem(data, count) for data, count in counts.items()]
         heapify(priority_queue)
         return priority_queue
             
@@ -99,7 +99,7 @@ class Solution:
         char_deque = deque()
         while priority_queue:
             item = heappop(priority_queue)
-            char_deque.appendleft(abs(item.count) * item.key)
+            char_deque.appendleft(abs(item.count) * item.data)
         return "".join(char_deque)
 
 
