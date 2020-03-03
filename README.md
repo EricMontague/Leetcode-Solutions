@@ -25,6 +25,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
 <summary>Solutions</summary>
   
   - [Problem 98: Validate Binary Search Tree](../master/medium/problem_98_validate_binary_search_tree.py)
+  - [Problem 451: Sort Characters by Frequency](../master/medium/problem_451_sort_characters_by_frequency.py)
 </details>
 
 <br>
