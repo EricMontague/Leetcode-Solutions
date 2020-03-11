@@ -29,6 +29,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 98: Validate Binary Search Tree](../master/medium/problem_98_validate_binary_search_tree.py)
   - [Problem 451: Sort Characters by Frequency](../master/medium/problem_451_sort_characters_by_frequency.py)
   - [Problem 146: LRU Cache](../master/medium/problem_146_lru_cache.py)
+  - [Problem 692: Top K Frequent Words](../master/medium/problem_692_top_k_frequent_words.py)
 </details>
 
 <br>
