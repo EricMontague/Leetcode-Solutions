@@ -30,6 +30,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 451: Sort Characters by Frequency](../master/medium/problem_451_sort_characters_by_frequency.py)
   - [Problem 146: LRU Cache](../master/medium/problem_146_lru_cache.py)
   - [Problem 692: Top K Frequent Words](../master/medium/problem_692_top_k_frequent_words.py)
+  - [Problem 1007: Minimum Domino Rotations For Equal Row](../master/medium/problem_1007_minimum_domino_rotations_for_equal_row.py)
 </details>
 
 <br>
