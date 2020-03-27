@@ -17,6 +17,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 1047: Remove All Adjacent Duplicates In a String](../master/easy/problem_1047_remove_all_adjacent_duplicates_in_string.py)
   - [Problem 104: Maximum Depth of a Binary Tree](../master/easy/problem_104_maximum_depth_of_binary_tree.py)
   - [Problem 206: Reverse Linked List](../master/easy/problem_206_reverse_linked_list.py)
+  - [Problem 1217: Play with Chips](../master/easy/problem_1217_play_with_chips.py)
 </details>
 
 
