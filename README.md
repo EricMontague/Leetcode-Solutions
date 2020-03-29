@@ -19,6 +19,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 206: Reverse Linked List](../master/easy/problem_206_reverse_linked_list.py)
   - [Problem 1217: Play with Chips](../master/easy/problem_1217_play_with_chips.py)
   - [Problem 500: Keyboard Row](../master/easy/problem_500_keyboard_row.py)
+  - [Problem 136: Single Number](../master/easy/problem_136_single_number.py)
+  - [Problem 476: Number Complement](../master/easy/problem_476_number_complement.py)
 </details>
 
 
