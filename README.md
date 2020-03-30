@@ -21,6 +21,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 500: Keyboard Row](../master/easy/problem_500_keyboard_row.py)
   - [Problem 136: Single Number](../master/easy/problem_136_single_number.py)
   - [Problem 476: Number Complement](../master/easy/problem_476_number_complement.py)
+  - [Problem 867: Transpose Matrix](../master/easy/problem_867_transpose_matrix.py)
 </details>
 
 
@@ -37,6 +38,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 146: LRU Cache](../master/medium/problem_146_lru_cache.py)
   - [Problem 692: Top K Frequent Words](../master/medium/problem_692_top_k_frequent_words.py)
   - [Problem 1007: Minimum Domino Rotations For Equal Row](../master/medium/problem_1007_minimum_domino_rotations_for_equal_row.py)
+  - [Problem 450: Delete Node In a BST](../master/medium/problem_450_delete_node_in_a_BST.py)
 </details>
 
 <br>
