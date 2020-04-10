@@ -24,6 +24,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 867: Transpose Matrix](../master/easy/problem_867_transpose_matrix.py)
   - [Problem 463: Island Perimeter](../master/easy/problem_463_island_perimeter.py)
   - [Problem 1046: Last Stone Weight](../master/easy/problem_1046_last_stone_weight.py)
+  - [Problem 155: Min Stack](../master/easy/problem_155_min_stack.py)
 </details>
 
 
