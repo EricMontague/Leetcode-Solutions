@@ -23,6 +23,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 476: Number Complement](../master/easy/problem_476_number_complement.py)
   - [Problem 867: Transpose Matrix](../master/easy/problem_867_transpose_matrix.py)
   - [Problem 463: Island Perimeter](../master/easy/problem_463_island_perimeter.py)
+  - [Problem 1046: Last Stone Weight](../master/easy/problem_1046_last_stone_weight.py)
 </details>
 
 
