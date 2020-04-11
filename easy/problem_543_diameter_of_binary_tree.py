@@ -18,4 +18,12 @@ class Solution:
             self.maxSubtreeDiameter = max(leftSubtreeHeight + rightSubtreeHeight, self.maxSubtreeDiameter)
             return 1 + max(leftSubtreeHeight, rightSubtreeHeight)
         return 0
-    
+
+#Intuition
+#This problem really boils down to finding the subtree with the maximum diameter within
+#the tree. The diameter of a subtree can be expresssed as the height of the left subtree
+#plus the height of the right subtree, where a leaf node's height is considered to be 1 and
+# null pointers are considered to have a height of 0. 
+# After getting these two values you can compare the diameter of the current subtree to the known maximum subtree diameter.
+#After recursing through all "n" nodes, you will eventually find the subtree with the
+#maximum diameter
