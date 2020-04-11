@@ -5,17 +5,17 @@
 class Solution:
     
     def __init__(self):
-        self.maxSubtreeHeight = 0
+        self.maxSubtreeDiameter = 0
         
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
         self.findTreeHeight(root)
-        return self.maxSubtreeHeight
+        return self.maxSubtreeDiameter
     
     def findTreeHeight(self, root):
         if root is not None:
             leftSubtreeHeight = self.findTreeHeight(root.left)
             rightSubtreeHeight = self.findTreeHeight(root.right)
-            self.maxSubtreeHeight = max(leftSubtreeHeight + rightSubtreeHeight, self.maxSubtreeHeight)
+            self.maxSubtreeDiameter = max(leftSubtreeHeight + rightSubtreeHeight, self.maxSubtreeDiameter)
             return 1 + max(leftSubtreeHeight, rightSubtreeHeight)
         return 0
     
