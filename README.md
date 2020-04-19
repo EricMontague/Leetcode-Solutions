@@ -54,6 +54,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
 
 <details>
 <summary>Solutions</summary>
+  
+  - [Problem 23: Merge K Sorted Lists](../master/hard/problem_23_merge_k_sorted_lists.py)
 </details>
 
 
