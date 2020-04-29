@@ -1,4 +1,4 @@
-"""This script contains my solutions to Leetcode problem 1379."""
+"""This script contains my solutions to Leetcode problem 1302: Deepest Leaves Sum."""
 
 
 # Definition for a binary tree node.
