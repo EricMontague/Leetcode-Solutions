@@ -48,6 +48,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 817: Linked List Components](../master/medium/problem_817_linked_list_components.py)
   - [Problem 1379: Find a Corressponding Node of a Binary Tree in a Clone of that Tree](../master/medium/problem_1379_find_a_corresponding_node_in_a_binary_tree.py)
   - [Problem 1302: Deepest Leaves Sum](../master/medium/problem_1302_deepest_leaves_sum.py)
+  - [Problem 807: Max Increase to Keep City Skyline](../master/medium/problem_807_max_increase_to_keep_city_skyline.py)
 </details>
 
 <br>
