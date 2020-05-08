@@ -49,6 +49,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 1379: Find a Corressponding Node of a Binary Tree in a Clone of that Tree](../master/medium/problem_1379_find_a_corresponding_node_in_a_binary_tree.py)
   - [Problem 1302: Deepest Leaves Sum](../master/medium/problem_1302_deepest_leaves_sum.py)
   - [Problem 807: Max Increase to Keep City Skyline](../master/medium/problem_807_max_increase_to_keep_city_skyline.py)
+  - [Problem 654: Maximum Binary Tree](../master/medium/problem_654_maximum_binary_tree.py)
+  - [Problem 701: Insert into a Binary Search Tree](../master/medium/problem_701_insert_into_a_binary_search_tree.py)
 </details>
 
 <br>
