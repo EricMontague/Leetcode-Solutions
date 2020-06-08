@@ -53,6 +53,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 701: Insert into a Binary Search Tree](../master/medium/problem_701_insert_into_a_binary_search_tree.py)
   - [Problem 1305: All Elements in Two Binary Search Trees](../master/medium/problem_1305_all_elements_in_two_binary_search_trees.py)
   - [Problem 797: All Paths From Source to Target](../master/medium/problem_797_all_paths_from_source_to_target.py)
+  - [Problem 207: Course Schedule](../master/medium/problem_207_course_schedule.py)
 </details>
 
 <br>
