@@ -2,8 +2,8 @@
 
 
 #Overall time complexity: O(VE), where V is the number of vertices in the graph
-# and E is the number of edges in the graph. If this were a maximally connected graph, 
-# then this could be O(V^3) because E = V ^2 in a maximally connected graph
+# and E is the number of edges in the graph. If this were a complete graph, 
+# then this could be O(V^3) because E = V ^2 in a complete graph
 
 #Overall space complexity: O(V)
 class Solution:
