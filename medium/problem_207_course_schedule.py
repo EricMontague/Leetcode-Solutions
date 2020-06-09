@@ -5,7 +5,7 @@
 # and E is the number of edges in the graph. If this were a complete graph, 
 # then this could be O(V^2) because E = V ^2 in a complete graph
 
-#Overall space complexity: O(V)
+#Overall space complexity: O(V + E)
 
 
 #Enumeration class used for graph coloring
@@ -37,7 +37,7 @@ class Solution:
             if states[nextCourse] == State.UNVISITED:
                 if self.hasCycle(states, nextCourse, prerequisites):
                     return True
-            elif nextCourse in dfsTree:
+            if states[nextCourse] == State.VISITING:
                 return True
         states[course] = State.VISITED
         return False
