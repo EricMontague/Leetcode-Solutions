@@ -41,3 +41,26 @@ class Solution:
                 return True
         states[course] = State.VISITED
         return False
+
+
+
+# Below is an iterative version of the method, hasCycle
+# Writing an iterative version gives you the same time complexity
+# as well as space complexity
+def hasCycle(states, course, prerequisites):
+    stack = []
+    stack.append((course, False))
+    states[course] = State.VISITING
+    while stack:
+        currentCourse, finished = stack.pop()
+        if finished:
+            states[currentCourse] = State.VISITED
+        else:
+            stack.append((currentCourse, True))
+            for nextCourse in prerequisites[currentCourse]:
+                if states[nextCourse] == State.UNVISITED:
+                    stack.append((nextCourse, False))
+                    states[currentCourse] = State.VISITING
+                if states[nextCourse] == State.VISITING:
+                    return True
+    return False
