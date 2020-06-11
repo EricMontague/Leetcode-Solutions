@@ -64,3 +64,72 @@ def hasCycle(states, course, prerequisites):
                 if states[nextCourse] == State.VISITING:
                     return True
     return False
+
+
+
+
+
+# Another solution that uses BFS
+# Overall time complexity: O(V + E)
+# Overall space complexity: O(V + E)
+# Credit: https://leetcode.com/problems/course-schedule/discuss/58537/AC-Python-topological-sort-52-ms-solution-O(V-%2B-E)-time-and-O(V-%2B-E)-space
+from collections import deque
+
+
+class Solution:
+    def canFinish(self, numNodes, edges):
+        """
+        :type n: int
+        :type edges: List[List[int]]
+        :rtype: bool
+        """
+        
+        visited = set()
+        graph, inDegrees = self.buildGraph(numNodes, edges)
+        queue = self.buildQueue(inDegrees)
+        self.bfs(queue, visited, inDegrees, graph)
+        return len(visited) == numNodes
+    
+    def buildGraph(self, numNodes, edges):
+        # construct graph
+        
+        # key represents a prerequisites
+        # value is a set that represents the courses that come after that prereq
+        graph = {node: set() for node in range(numNodes)} #outDegrees
+        
+        #key represents a course
+        #value represents the number of prerequisites needed to take a course
+        inDegrees = {node:0 for node in range(numNodes)}
+        for edge in edges:
+            graph[edge[1]].add(edge[0])
+            inDegrees[edge[0]] += 1
+        return graph, inDegrees
+    
+    def buildQueue(self, inDegrees):
+        # find nodes whose out degree == 0
+        # This represents finding all classes which don't have any
+        # prerequisites
+        queue = deque()
+        for node, inDegree in inDegrees.items():
+            if inDegree == 0:
+                queue.append(node)
+        return queue
+    
+    def bfs(self, queue, visited, inDegrees, graph):
+        # loop all nodes whose out degree == 0
+        
+        # adding a node to the queue represents scheduling a course, which may
+        # also be a prerequisite to other courses
+        # while adding to it visited is marking it as taken
+        # afterwards you decrement the number of prereqs needed
+        # to take each course that is a neighbor of that prereq in the graph
+        # if there are no more prereqs left to take, then you add that class(node)
+        # to the queue (schedule it)
+        while queue:
+            node = queue.popleft()
+            visited.add(node)
+            for neighbor in graph[node]:
+                inDegrees[neighbor] -= 1
+                if inDegrees[neighbor] == 0:
+                    queue.append(neighbor)
+        
