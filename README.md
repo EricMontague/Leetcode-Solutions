@@ -56,6 +56,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 797: All Paths From Source to Target](../master/medium/problem_797_all_paths_from_source_to_target.py)
   - [Problem 207: Course Schedule](../master/medium/problem_207_course_schedule.py)
   - [Problem 814: Binary Tree Pruning](../master/medium/problem_814_binary_tree_pruning.py)
+  - [Problem 152: Maximum Product Subarray](../master/medium/problem_152_maximum_product_subarray.py)
 </details>
 
 <br>
