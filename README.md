@@ -57,6 +57,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 207: Course Schedule](../master/medium/problem_207_course_schedule.py)
   - [Problem 814: Binary Tree Pruning](../master/medium/problem_814_binary_tree_pruning.py)
   - [Problem 152: Maximum Product Subarray](../master/medium/problem_152_maximum_product_subarray.py)
+  - [Problem 33: Search in Rotated Sorted Array](../master/medium/problem_33_search_in_rotated_sorted_array.py)
+  - [Problem 153: Find Minimum in Rotated Sorted Array](../master/medium/problem_153_find_minimum_in_rotated_sorted_array.py)
 </details>
 
 <br>
