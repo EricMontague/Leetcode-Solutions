@@ -32,7 +32,7 @@ class Solution:
     
     
 
-# Dynamic Programming solution
+# Dynamic Programming solution - Top down approach
 # Time complexity: O(n ^ 2), where 'n' is the number of characters in the string
 # Space complexity: O(n ^ 2), where 'n' is the number of characters in the string
 class Solution:  
@@ -68,5 +68,51 @@ class Solution:
         if memo[i + 1][j - 1] and string[i] == string[j]: 
             memo[i][j] = True
         return max(j - i + 1, self.expandAroundCenter(string, i - 1, j + 1, memo))
+        
+
+
+
+# Dynamic Programming solution - Bottom Up approach
+# Time complexity: O(n ^ 2), where 'n' is the number of characters in the string
+# Space complexity: O(n ^ 2), where 'n' is the number of characters in the string
+class Solution:  
+
+    def longestPalindrome(self, string: str) -> str:
+        start = 0
+        end = 0
+        memo = [[False] * len(string) for index in range(len(string))]
+        for windowSize in range(len(string)):
+            i = 0
+            j = windowSize
+            while j < len(string):
+                if self.isPalindrome(string, i, j, memo):
+                    if j - i + 1 > end - start:
+                        start = i
+                        end = j  
+                i += 1
+                j += 1
+        return string[start: end + 1]
+    
+    def isPalindrome(self, string, i, j, memo):
+        # Boundary characters not equal
+        if string[i] != string[j]:
+            memo[i][j] = False
+        # Single character palindromes
+        if i == j:
+            memo[i][j] = True
+        # Double character palindromes
+        elif i + 1 == j and string[i] == string[j]:
+            memo[i][j] = True
+        else:
+            # P(i, j) == True, if P(i + 1, j - 1) == True
+            if memo[i + 1][j - 1] and string[i] == string[j]:
+                memo[i][j] = True
+            # P(i, j) == False, since P(i + 1, j - 1) == False
+            else:
+                memo[i][j] = False
+        return memo[i][j]
+                      
+    
+   
         
        
