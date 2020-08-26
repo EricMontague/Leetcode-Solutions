@@ -28,4 +28,27 @@ class Solution:
             rainwater += (minHeight - heights[index])
         return rainwater
         
-        
+
+# Recursive solution:
+# time complexity: O(n), where 'n' is the total number of integers in height
+# space complexity: O(n), where 'n' is the total number of integers in height
+class Solution:
+    rainwater = 0
+    def trap(self, height: List[int]) -> int:
+        if not height:
+            return self.rainwater
+        startingIndex = 0
+        self.getElevationHeight(height, height[0], startingIndex)
+        return self.rainwater
+    
+    def getElevationHeight(self, height, maxHeight, currentIndex):
+        if currentIndex == len(height) - 1:
+            return height[currentIndex]
+        newMaxHeight = max(height[currentIndex], maxHeight)
+        elevationHeight = self.getElevationHeight(height, newMaxHeight, currentIndex + 1)
+        minHeight = min(elevationHeight, newMaxHeight)
+        rainwater = minHeight - height[currentIndex]
+        if rainwater <= 0:
+            return height[currentIndex]
+        self.rainwater += rainwater
+        return height[currentIndex] + rainwater
