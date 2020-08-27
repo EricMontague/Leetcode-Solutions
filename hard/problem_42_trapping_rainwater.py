@@ -52,3 +52,22 @@ class Solution:
             return height[currentIndex]
         self.rainwater += rainwater
         return height[currentIndex] + rainwater
+
+
+# Stack Solution:
+# time complexity: O(n), where 'n' is the number of integers in heights
+# space complexity: O(n), where 'n' is the number of integers in heights
+class Solution:
+    def trap(self, heights: List[int]) -> int:
+        totalWater = 0
+        stack = []
+        for index, currentHeight in enumerate(heights):
+            while stack and currentHeight > heights[stack[-1]]:
+                target = stack.pop()
+                if stack:
+                    distance = index - stack[-1] - 1
+                    newTop = stack[-1]
+                    boundedHeight = min(currentHeight, heights[newTop]) - heights[target]
+                    totalWater += distance * boundedHeight
+            stack.append(index)
+        return totalWater
