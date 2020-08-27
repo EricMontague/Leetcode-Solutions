@@ -71,3 +71,30 @@ class Solution:
                     totalWater += distance * boundedHeight
             stack.append(index)
         return totalWater
+
+
+# Two pointer solution:
+# time complexity: O(n), where 'n' is the number of integers in heights
+# space complexity: O(1)
+class Solution:
+    def trap(self, heights: List[int]) -> int:
+        left = 0
+        right = len(heights) - 1
+        totalWater = 0
+        leftMax = 0
+        rightMax = 0
+        while left < right:
+            if heights[left] < heights[right]:
+                if heights[left] >= leftMax:
+                    leftMax = heights[left]
+                else:
+                    totalWater += leftMax - heights[left]
+                left += 1
+            else:
+                if heights[right] >= rightMax:
+                    rightMax = heights[right]
+                else:
+                    totalWater += rightMax - heights[right]
+                right -= 1
+        return totalWater
+                
