@@ -28,6 +28,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 543: Diameter of Binary Tree](../master/easy/problem_543_diameter_of_binary_tree.py)
   - [Problem 125: Valid Palindrome ](../master/easy/problem_125_valid_palindrome.py)
   - [Problem 21: Merge Two Sorted Lists](../master/easy/problem_21_merge_two_sorted_lists.py)
+  - [Problem 496: Next Greater Element I](../master/easy/problem_496_next_greater_element1.py)
 </details>
 
 
