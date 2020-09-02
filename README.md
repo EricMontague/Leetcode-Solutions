@@ -29,7 +29,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 125: Valid Palindrome ](../master/easy/problem_125_valid_palindrome.py)
   - [Problem 21: Merge Two Sorted Lists](../master/easy/problem_21_merge_two_sorted_lists.py)
   - [Problem 496: Next Greater Element I](../master/easy/problem_496_next_greater_element1.py)
-  - [Problem 876 Middle of the Linked List](../master/easy/problem_876_middle_of_the_linked_list.py)
+  - [Problem 876: Middle of the Linked List](../master/easy/problem_876_middle_of_the_linked_list.py)
 </details>
 
 
