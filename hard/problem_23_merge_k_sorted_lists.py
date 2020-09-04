@@ -57,3 +57,40 @@ class Solution:
 
 #Overall space complexity: O(k), where "k" is the number of linked lists.
 #This solution maintains a min heap that is at most size "k". 
+
+
+
+
+# Divide and Conquer Solution
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        if not lists:
+            return None
+        numLinkedLists = len(lists)
+        while len(lists) > 1:
+            newLists = []
+            for index in range(0, numLinkedLists, 2):
+                if index >= numLinkedLists and index + 1 >= numLinkedLits:
+                    break
+                if index + 1 >= numLinkedLists:
+                    newHead = self.mergeLists(lists[index], None)
+                else:
+                    newHead = self.mergeLists(lists[index], lists[index + 1])
+                newLists.append(newHead)
+            lists = newLists
+            numLinkedLists = len(lists)
+        return lists[0]
+    
+    def mergeLists(self, head1, head2):
+        sentinel = ListNode(None, None)
+        lastNode = sentinel
+        while head1 and head2:
+            if head1.val <= head2.val:
+                lastNode.next = head1
+                head1 = head1.next
+            else:
+                lastNode.next = head2
+                head2 = head2.next
+            lastNode = lastNode.next
+        lastNode.next = head1 or head2
+        return sentinel.next
