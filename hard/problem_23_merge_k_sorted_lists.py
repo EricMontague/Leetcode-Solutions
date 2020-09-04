@@ -1,30 +1,47 @@
 """This is my solution to Leetcode problem 23."""
 
 
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-from heapq import heappush, heappop
+import heapq
+
+
+class QueueItem:
+    
+    def __init__(self, key, index):
+        self.key = key
+        self.index = index
+        
+    def __lt__(self, other):
+        if self.key == other.key:
+            return self.index < other.index
+        return self.key < other.key
 
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-        if not lists:
-            return None
-        tail = ListNode(None)
-        head = tail
-        min_heap = []
-        for index, node in enumerate(lists):
-            if node is not None:
-                heappush(min_heap, (node.val, index))
-        while min_heap:
-            node_value, index = heappop(min_heap)
-            tail.next = lists[index]
-            tail = tail.next
-            lists[index] = lists[index].next
-            if lists[index] is not None:
-                heappush(min_heap, (lists[index].val, index))
+        priorityQueue = self.buildPriorityQueue(lists)
+        return self.mergeLists(priorityQueue, lists)
+        
+    def buildPriorityQueue(self, lists):
+        priorityQueue = []
+        for index in range(len(lists)):
+            node = lists[index]
+            if node:
+                queueItem = QueueItem(node.val, index)
+                priorityQueue.append(queueItem)
+        heapq.heapify(priorityQueue)
+        return priorityQueue
+    
+    def mergeLists(self, priorityQueue, lists):
+        sentinel = ListNode(None, None)
+        newTail = sentinel
+        while priorityQueue:
+            queueItem = heapq.heappop(priorityQueue)
+            newTail.next = lists[queueItem.index]
+            newTail = newTail.next
+            lists[queueItem.index] = lists[queueItem.index].next
+            newCurrentNode = lists[queueItem.index]
+            if newCurrentNode is not None:
+                heapq.heappush(priorityQueue, QueueItem(newCurrentNode.val, queueItem.index))
+        return sentinel.nextlists[index].val, index))
         return head.next
 
 #Overall time complexity: O(Nlogk), where "N" is the total number of nodes in
