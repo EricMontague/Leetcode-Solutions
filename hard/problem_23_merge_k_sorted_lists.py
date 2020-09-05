@@ -62,6 +62,11 @@ class Solution:
 
 
 # Divide and Conquer Solution
+
+#Overall time complexity: O(Nlogk), where "N" is the total number of nodes in
+#all linked lists and where "k" is the number of linked lists.
+
+#Overall space complexity: O(1)
 class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         if not lists:
