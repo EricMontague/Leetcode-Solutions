@@ -82,6 +82,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 23: Merge K Sorted Lists](../master/hard/problem_23_merge_k_sorted_lists.py)
   - [Problem 42: Trapping rain water](../master/hard/problem_42_trapping_rainwater.py)
   - [Problem 239: Sliding Window Maximum](../master/hard/problem_239_sliding_window_maximum.py)
+  - [Problem 297: Serialize and Deserialize Binary Tree](../master/hard/problem_297_serialize_and_deserialize_binary_tree.py)
 </details>
 
 
