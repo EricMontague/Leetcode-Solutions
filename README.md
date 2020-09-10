@@ -31,7 +31,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 496: Next Greater Element I](../master/easy/problem_496_next_greater_element1.py)
   - [Problem 876: Middle of the Linked List](../master/easy/problem_876_middle_of_the_linked_list.py)
   - [Problem 234: Palindrome Linked List](../master/easy/problem_234_palindrome_linked_list.py)
-  - [Problem 20: Valid Parentheses](../master/easy/problem_20_valid_parenthesis.py)
+  - [Problem 20: Valid Parentheses](../master/easy/problem_20_valid_parentheses.py)
   - [Problem 242: Valid Anagram](../master/easy/problem_20_valid_parenthesis.py)
 </details>
 
