@@ -36,7 +36,7 @@ class Solution:
 # time complexity: O(nmlogm), where 'n' is the length of the strings list and
 # 'm' is the length of the longest string
 
-# space complexity: O(n), where 'n' is the length of the strings list
+# space complexity: O(n + m), where 'n' is the length of the strings list
 from collections import defaultdict
 
 class Solution:
