@@ -72,6 +72,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 143: Reorder List](../master/medium/problem_143_reorder_list.py)
   - [Problem 3: Longest Substring Without Repeating Characters](../master/medium/problem_3_longest_substring_without_repeating_characters.py)
   - [Problem 647: Palindromic Substrings](../master/medium/problem_647_palindromic_substrings.py)
+  - [Problem 49: Group Anagrams](../master/medium/problem_49_group_anagrams.py)
 </details>
 
 <br>
