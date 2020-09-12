@@ -5,7 +5,13 @@
 
 from collections import deque
 
+from collections import deque
+
+
 class Codec:
+    
+    SERIALIZED_NULL_POINTER = "#"
+        
 
     def serialize(self, root):
         """Encodes a tree to a single string.
@@ -14,24 +20,22 @@ class Codec:
         :rtype: str
         """
         if root is None:
-            return [None]
+            return ""
         serializedTree = []
-        queue = deque()
-        queue.append(root)
+        queue = deque([root])
         while queue:
             node = queue.popleft()
-            if node is None:
-                serializedTree.append(node)
-            else:
-                serializedTree.append(node.val)
             if node is not None:
                 queue.append(node.left)
                 queue.append(node.right)
+                serializedTree.append(str(node.val))        
+            else:
+                serializedTree.append(self.SERIALIZED_NULL_POINTER)
         self.pruneNullLeafNodePointers(serializedTree)
-        return serializedTree
+        return ",".join(serializedTree)
     
     def pruneNullLeafNodePointers(self, serializedTree):
-        while serializedTree and serializedTree[-1] is None:
+        while serializedTree[-1] == self.SERIALIZED_NULL_POINTER:
             serializedTree.pop()
             
     def deserialize(self, data):
@@ -40,29 +44,29 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        serializedTreeDeque = deque(data)
-        deserializedTreeDeque = deque()
-        rootValue = serializedTreeDeque.popleft()
-        if rootValue is None:
-            return rootValue
-        root = TreeNode(rootValue)
-        deserializedTreeDeque.append(root)
-        while serializedTreeDeque:
-            node = deserializedTreeDeque.popleft()
-            leftChildValue = serializedTreeDeque.popleft()
-            if serializedTreeDeque:
-                rightChildValue = serializedTreeDeque.popleft()
-            else:
-                rightChildValue = None
-            if leftChildValue is not None:
-                node.left = TreeNode(leftChildValue)
-                deserializedTreeDeque.append(node.left)
-            if rightChildValue is not None:
-                node.right = TreeNode(rightChildValue)
-                deserializedTreeDeque.append(node.right)
+        if not data:
+            return None
+        childNodeQueue = self.buildDeserializedNodeQueue(data)
+        root = childNodeQueue.popleft()
+        parentNodeQueue = deque([root])       
+        while childNodeQueue:
+            parentNode = parentNodeQueue.popleft()
+            leftChild = childNodeQueue.popleft()
+            if leftChild:
+                parentNode.left = leftChild
+                parentNodeQueue.append(parentNode.left)
+            if childNodeQueue:
+                rightChild = childNodeQueue.popleft()
+                if rightChild:
+                    parentNode.right = rightChild
+                    parentNodeQueue.append(parentNode.right)       
         return root
-
-
- # Your Codec object will be instantiated and called as such:
-# codec = Codec()
-# codec.deserialize(codec.serialize(root))
+    
+    def buildDeserializedNodeQueue(self, data):
+        nodes = deque()
+        for value in data.split(","):
+            if value != self.SERIALIZED_NULL_POINTER:
+                nodes.append(TreeNode(int(value)))
+            else:
+                nodes.append(None)
+        return nodes
