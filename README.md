@@ -33,6 +33,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 234: Palindrome Linked List](../master/easy/problem_234_palindrome_linked_list.py)
   - [Problem 20: Valid Parentheses](../master/easy/problem_20_valid_parentheses.py)
   - [Problem 242: Valid Anagram](../master/easy/problem_20_valid_parenthesis.py)
+  - [Problem 1582: Special Positions in a Binary Matrix](../master/easy/problem_1582_special_positions_in_a_binary_matrix.py)
 </details>
 
 
