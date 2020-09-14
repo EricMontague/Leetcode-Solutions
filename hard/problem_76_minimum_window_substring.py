@@ -1,6 +1,7 @@
 """This file contains my solution for leetcode problem 76: Minimum Window substring."""
 
-
+# time complexity: O(n + m), where 'n' is string and 'm' is chars
+# space complexity: O(n + m), where 'n' is string and 'm' is chars
 from collections import Counter
 
 class Solution:
