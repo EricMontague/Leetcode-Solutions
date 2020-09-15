@@ -27,3 +27,10 @@ class Solution:
             if operandOne * operandTwo < 0 and operandOne % operandTwo != 0:
                 result += 1
         return result
+
+
+# the funny looking if statement for division is to account for expression such as
+# -13 // 5 and -5 // 13.
+# Another way of writing it is this:
+if (operandOne < 0 and operandTwo > 0 or operandTwo < 0 and operandOne > 0) and operandOne % operandTwo != 0:
+    results += 1
