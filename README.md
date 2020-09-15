@@ -75,6 +75,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 647: Palindromic Substrings](../master/medium/problem_647_palindromic_substrings.py)
   - [Problem 49: Group Anagrams](../master/medium/problem_49_group_anagrams.py)
   - [Problem 739: Daily Temperatures](../master/medium/problem_739_daily_temperatures.py)
+  - [Problem 150: Evaluate Reverse Polish Notation](../master/medium/problem_150_evaluate_reverse_polish_notation.py)
 </details>
 
 <br>
