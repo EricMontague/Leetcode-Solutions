@@ -76,6 +76,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 49: Group Anagrams](../master/medium/problem_49_group_anagrams.py)
   - [Problem 739: Daily Temperatures](../master/medium/problem_739_daily_temperatures.py)
   - [Problem 150: Evaluate Reverse Polish Notation](../master/medium/problem_150_evaluate_reverse_polish_notation.py)
+  - [Problem 1008: Construct Binary Searcg Tree from Preorder Traversal](../master/medium/problem_1008_construct_bst_from_preorder_traversal.py)
 </details>
 
 <br>
