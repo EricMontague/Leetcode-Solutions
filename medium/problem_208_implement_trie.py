@@ -1,3 +1,8 @@
+"""This file contains my solution to Leetcode problem 208: Implement Trie."""
+
+# All methods run in O(n) time, where 'n' is the size of the input string
+# All methods run in O(1) space
+
 class TrieNode:
     
     CHARACTER_SET_SIZE = 26
