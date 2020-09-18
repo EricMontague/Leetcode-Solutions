@@ -8,8 +8,8 @@
 #         self.left = None
 #         self.right = None
 
-#Overall time complexity is O(n), where n is the number of nodes in the tree
-#Over space complexity is O(h), where h is the height of the binary tree
+# Overall time complexity is O(n), where n is the number of nodes in the tree
+# Over space complexity is O(h), where h is the height of the binary tree
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         if root is None:
@@ -17,8 +17,8 @@ class Solution:
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
 
-#Overall time complexity is O(n), where n is the number of nodes in the tree
-#Over space complexity is O(h), where h is the height of the binary tree
+# Overall time complexity is O(n), where n is the number of nodes in the tree
+# Over space complexity is O(h), where h is the height of the binary tree
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
         max_depth = 0
@@ -35,3 +35,25 @@ class Solution:
                 stack.append((root.left, depth + 1))
         return max_depth
 
+
+# Overall time complexity is O(n), where n is the number of nodes in the tree
+# Over space complexity is O(h), where h is the height of the binary tree
+from collections import deque
+
+
+class Solution:
+    def maxDepth(self, root: TreeNode) -> int:
+        maxDepth = 0
+        if not root:
+            return maxDepth
+        queue = deque()
+        queue.append((root, maxDepth + 1))
+
+        while queue:
+            node, depth = queue.popleft()
+            maxDepth = max(depth, maxDepth)
+            if node.left:
+                queue.append((node.left, depth + 1))
+            if node.right:
+                queue.append((node.right, depth + 1))
+        return maxDepth
