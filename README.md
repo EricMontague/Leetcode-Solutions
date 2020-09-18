@@ -78,6 +78,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 150: Evaluate Reverse Polish Notation](../master/medium/problem_150_evaluate_reverse_polish_notation.py)
   - [Problem 1008: Construct Binary Searcg Tree from Preorder Traversal](../master/medium/problem_1008_construct_bst_from_preorder_traversal.py)
   - [Problem 208: Implement Trie](../master/medium/problem_208_implement_trie.py)
+  - [Problem 424: Longest Repeating Character Replacement](../master/medium/problem_424_longest_repeating_character_replacement.py)
 </details>
 
 <br>
