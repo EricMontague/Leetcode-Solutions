@@ -35,6 +35,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 242: Valid Anagram](../master/easy/problem_20_valid_parenthesis.py)
   - [Problem 1582: Special Positions in a Binary Matrix](../master/easy/problem_1582_special_positions_in_a_binary_matrix.py)
   - [Problem 226: Invert Binary Tree](../master/easy/problem_226_invert_binary_tree.py)
+  - [Problem 387: First Unique Character In a String](../master/easy/problem_387_find_first_unique_character_in_string.py)
 </details>
 
 
