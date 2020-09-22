@@ -20,7 +20,7 @@ class Solution:
                 charCounts[endChar] -= 1
                 if charCounts[endChar] >= 0:
                     uniqueCount -= 1
-                while windowStart <= windowEnd and uniqueCount == 0:
+                while uniqueCount == 0:
                     if windowEnd - windowStart <= minSubstringEnd - minSubstringStart:
                         foundValidWindow = True
                         minSubstringEnd = windowEnd
@@ -31,6 +31,8 @@ class Solution:
                         if charCounts[startChar] > 0:
                             uniqueCount += 1
                     windowStart += 1
+                    while windowStart < windowEnd and string[windowStart] not in charCounts:
+                        windowStart += 1
         if not foundValidWindow:
             return ""
         return string[minSubstringStart: minSubstringEnd + 1]
