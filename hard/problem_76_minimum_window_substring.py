@@ -1,14 +1,14 @@
 """This file contains my solution for leetcode problem 76: Minimum Window substring."""
 
 # time complexity: O(n + m), where 'n' is string and 'm' is chars
-# space complexity: O(n + m), where 'n' is string and 'm' is chars
+# space complexity: O(m), where 'm' is chars
 from collections import Counter
 
 class Solution:
     def minWindow(self, string: str, chars: str) -> str:
         if string == "" or chars == "" or len(chars) > len(string):
             return ""
-        flag = False
+        foundValidWindow = False
         charCounts = Counter(chars)
         minSubstringStart = 0
         minSubstringEnd = len(string) - 1
@@ -20,9 +20,9 @@ class Solution:
                 charCounts[endChar] -= 1
                 if charCounts[endChar] >= 0:
                     uniqueCount -= 1
-                while uniqueCount == 0:
+                while windowStart <= windowEnd and uniqueCount == 0:
                     if windowEnd - windowStart <= minSubstringEnd - minSubstringStart:
-                        flag = True
+                        foundValidWindow = True
                         minSubstringEnd = windowEnd
                         minSubstringStart = windowStart
                     startChar = string[windowStart]
@@ -31,8 +31,6 @@ class Solution:
                         if charCounts[startChar] > 0:
                             uniqueCount += 1
                     windowStart += 1
-                    while windowStart < windowEnd and string[windowStart] not in charCounts:
-                        windowStart += 1
-        if not flag:
+        if not foundValidWindow:
             return ""
         return string[minSubstringStart: minSubstringEnd + 1]
