@@ -13,6 +13,7 @@ class Solution:
             if characterCount == 1:
                 characterAscii = self.mapIndexToCharacter(index, "a")
                 return chr(characterAscii)
+        return ""
     
     def buildCharacterFrequencyArray(self, string):
         characterCounts = [0] * 26
