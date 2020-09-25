@@ -36,3 +36,59 @@ class Solution:
         if not foundValidWindow:
             return ""
         return string[minSubstringStart: minSubstringEnd + 1]
+
+
+
+# More optimized solution for the case where "t" is much smaller than "s".
+# Same time and space complexities
+
+class Solution:
+    def minWindow(self, string: str, chars: str) -> str:
+        if not string or not chars or len(chars) > len(string):
+            return ""
+        charCounts = self.buildCharacterFrequencyTable(chars)
+        filteredStringArray = self.buildFilteredStringArray(string, charCounts)
+        uniqueCounts = len(chars)
+        foundMinWindow = False
+        left = 0
+        right = 0
+        minStart = 0
+        minEnd = len(string) - 1
+        while right < len(filteredStringArray):
+            endChar = filteredStringArray[right][0]
+            charCounts[endChar] -= 1
+            if charCounts[endChar] >= 0:
+                uniqueCounts -= 1
+            while left <= right and uniqueCounts == 0:
+                foundMinWindow = True
+                end = filteredStringArray[right][1]
+                start = filteredStringArray[left][1]
+                if end - start < minEnd - minStart:
+                    minEnd = end
+                    minStart = start
+                startChar = filteredStringArray[left][0]
+                if startChar in charCounts:
+                    charCounts[startChar] += 1
+                    if charCounts[startChar] > 0:
+                        uniqueCounts += 1
+                left += 1
+            right += 1
+        if not foundMinWindow:
+            return ""
+        return string[minStart: minEnd + 1]
+    
+    def buildCharacterFrequencyTable(self, chars):
+        charCounts = {}
+        for char in chars:
+            if char not in charCounts:
+                charCounts[char] = 0
+            charCounts[char] += 1
+        return charCounts
+    
+    def buildFilteredStringArray(self, string, charCounts):
+        filteredStringArray = [
+            (char, idx) for idx, char in enumerate(string) if char in charCounts
+        ]
+        return filteredStringArray
+        
+            
