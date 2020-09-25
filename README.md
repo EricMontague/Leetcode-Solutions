@@ -85,6 +85,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 1008: Construct Binary Searcg Tree from Preorder Traversal](../master/medium/problem_1008_construct_bst_from_preorder_traversal.py)
   - [Problem 208: Implement Trie](../master/medium/problem_208_implement_trie.py)
   - [Problem 424: Longest Repeating Character Replacement](../master/medium/problem_424_longest_repeating_character_replacement.py)
+  - [Problem 230: Kth Smallest Element in a BST](../master/medium/problem_230_kth_smallest_element_in_a_bst.py)
 </details>
 
 <br>
