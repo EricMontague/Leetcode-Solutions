@@ -38,6 +38,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 387: First Unique Character In a String](../master/easy/problem_387_find_first_unique_character_in_string.py)
   - [Problem 653: Two Sum IV - Input is a BST](../master/easy/problem_653_two_sum_iv_input_bst.py)
   - [Problem 235: Lowest Common Ancestor in a BST](../master/easy/problem_235_lowest_common_ancestor_in_bst.py)
+  - [Problem 100: Same Tree](../master/easy/problem_100_same_tree.py)
 </details>
 
 
