@@ -27,3 +27,28 @@ class Solution:
     
     def mapIndexToCharacter(self, index, base):
         return index + ord(base)
+
+
+# Better solution
+# time complexity: O(n), where 'n' is the number of characters in the original string
+# space complexity: O(1)
+class Solution:
+    def findTheDifference(self, originalString: str, randomizedString: str) -> str:
+        difference = 0
+        for index in range(len(originalString)):
+            difference -= ord(originalString[index])
+            difference += ord(randomizedString[index])
+        difference += ord(randomizedString[-1])
+        return chr(difference)
+    
+
+# Same as the previous solution, but using bit manipulation
+class Solution:
+    def findTheDifference(self, originalString: str, randomizedString: str) -> str:
+        difference = 0
+        for index in range(len(randomizedString)):
+            if index < len(originalString):
+                difference = difference ^ ord(originalString[index])
+            difference = difference ^ ord(randomizedString[index])
+        return chr(difference)
+    
