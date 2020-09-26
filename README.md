@@ -40,6 +40,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 235: Lowest Common Ancestor in a BST](../master/easy/problem_235_lowest_common_ancestor_in_bst.py)
   - [Problem 100: Same Tree](../master/easy/problem_100_same_tree.py)
   - [Problem 389: Find the Difference](../master/easy/problem_389_find_the_difference.py)
+  - [Problem 349: Intersection of Two Arrays](../master/easy/problem_349_intersection_of_two_arrays.py)
 </details>
 
 
