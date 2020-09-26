@@ -41,6 +41,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 100: Same Tree](../master/easy/problem_100_same_tree.py)
   - [Problem 389: Find the Difference](../master/easy/problem_389_find_the_difference.py)
   - [Problem 349: Intersection of Two Arrays](../master/easy/problem_349_intersection_of_two_arrays.py)
+  - [Problem 350: Intersection of Two Arrays II](../master/easy/problem_350_intersection_of_two_arrays_2.py)
 </details>
 
 
