@@ -1,7 +1,7 @@
 """This file contains my solution to Leetcode problem 230:
 Kth Smallest Element in a BST."""
 
-# time complexity: O(n), where 'n' is the number of nodes in the BST
+# time complexity: O(h + k), where 'h' is the height of the BST and 'k' is the parameter k
 # space complexity O(h), where 'h' is the height of the BST
 
 
