@@ -28,16 +28,28 @@ class Solution:
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         maxProfit = 0
-        if not prices:
-            return maxProfit
-        latestBuyPrice = prices[0]
+        currentDay = 0
         numDays = len(prices)
-        for currentDay in range(1, numDays):
-            if prices[currentDay - 1] > prices[currentDay]:
-                profit = prices[currentDay - 1] - latestBuyPrice
-                if profit > 0:
-                    maxProfit += profit
-                latestBuyPrice = prices[currentDay]
-        if prices[-1] > latestBuyPrice:
-            maxProfit += prices[-1] - latestBuyPrice
+        while currentDay < numDays - 1:
+            while currentDay < numDays - 1 and prices[currentDay + 1] <= prices[currentDay]:
+                currentDay += 1
+            valley = prices[currentDay]
+            
+            while currentDay < numDays - 1 and prices[currentDay + 1] >= prices[currentDay]:
+                currentDay += 1
+            peak = prices[currentDay]
+            maxProfit += peak - valley
         return maxProfit
+
+
+# time complexity: O(n) where 'n' is the number of integers in prices
+# space complexity: O(1)
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        maxProfit = 0
+        for currentDay in range(len(prices) - 1):
+            if prices[currentDay + 1] > prices[currentDay]:
+                maxProfit += prices[currentDay + 1] - prices[currentDay]
+        return maxProfit
+            
