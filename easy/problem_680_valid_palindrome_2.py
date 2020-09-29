@@ -33,7 +33,6 @@ class Solution:
         while start < end:
             if string[start] != string[end]:
                 if usedDeletion:
-                    print(start, end)
                     return False
                 if pointer == "start" and string[start + 1] == string[end]:
                     start += 1
