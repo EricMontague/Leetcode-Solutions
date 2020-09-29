@@ -14,7 +14,10 @@ class Solution:
             return self.isPalindrome(string, start + 1, end - 1, usedDeletion)
         if usedDeletion:
             return False
-        return self.isPalindrome(string, start + 1, end, True) or self.isPalindrome(string, start, end - 1, True)
+        return (
+            self.isPalindrome(string, start + 1, end, True) 
+            or self.isPalindrome(string, start, end - 1, True)
+        )
 
 
 # time complexity: O(n), where 'n' is the number of characters in the string
