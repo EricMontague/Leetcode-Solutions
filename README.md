@@ -95,6 +95,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 230: Kth Smallest Element in a BST](../master/medium/problem_230_kth_smallest_element_in_a_bst.py)
   - [Problem 211: Add and Search Words Data Structure](../master/medium/problem_211_design_add_and_search_words_data_structure.py)
   - [Problem 328: Odd Even Linked List](../master/medium/problem_328_odd_even_linked_list.py)
+  - [Problem 2: Add Two Numbers](../master/medium/problem_2_add_two_numbers.py)
 </details>
 
 <br>
