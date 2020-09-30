@@ -46,6 +46,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 122: Best Time to Buy and Sell Stock II](../master/easy/problem_122_best_time_to_buy_and_sell_stock_2.py)
   - [Problem 680: Valid Palindrome II](../master/easy/problem_680_valid_palindrome_2.py)
   - [Problem 572: Subtree of Another Tree](../master/easy/problem_572_subtree_of_another_tree.py)
+  - [Problem 237: Delete Node in a Linked List](../master/easy/problem_237_delete_node_in_a_linked_list.py)
 </details>
 
 
