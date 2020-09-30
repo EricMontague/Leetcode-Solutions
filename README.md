@@ -92,6 +92,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 208: Implement Trie](../master/medium/problem_208_implement_trie.py)
   - [Problem 424: Longest Repeating Character Replacement](../master/medium/problem_424_longest_repeating_character_replacement.py)
   - [Problem 230: Kth Smallest Element in a BST](../master/medium/problem_230_kth_smallest_element_in_a_bst.py)
+  - [Problem 211: Add and Search Words Data Structure](../master/medium/problem_211_design_add_and_search_words_data_structure.py)
 </details>
 
 <br>
