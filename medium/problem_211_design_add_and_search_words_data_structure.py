@@ -4,11 +4,12 @@ And Search Words Data Structure.
 
 # time complexity: 
 # addWord() - O(n), where 'n' is the length of the word
-# search() -
 
-# space complexity:
-# addWord() - O(n)
-# search() = O(n)
+# search() - O(M) in the case where the input is something like '.....', 
+# where 'M' is the total number of characters in the Trie
+# Otherwise if we get a normal word, it'll be O(h), where 'h' is the height of the Trie
+
+# space complexity is O(M) as well
 
 class TrieNode:
     
@@ -39,20 +40,17 @@ class Trie:
     
     def _search(self, current, word, index):
         if index == len(word):
-            if current.end_of_word:
-                return True
-            return False
+            return current.end_of_word
         character = word[index]
         if character == ".":
             for child in current.children:
                 if child and self._search(child, word, index + 1):
                     return True
-            return False
         else:
             mappedIndex = ord(character) - ord("a")
-            if not current.children[mappedIndex]:
-                return False
-            return self._search(current.children[mappedIndex], word, index + 1)
+            if current.children[mappedIndex]:
+                return self._search(current.children[mappedIndex], word, index + 1)
+        return False
         
         
 
