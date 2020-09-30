@@ -10,27 +10,24 @@ class Solution:
         sentinel = ListNode()
         sumTail = sentinel
         carry = 0
-        while firstNumHead or secondNumHead:
-            if firstNumHead and secondNumHead:
-                result = firstNumHead.val + secondNumHead.val
-                firstNumHead = firstNumHead.next
-                secondNumHead = secondNumHead.next
-            elif firstNumHead:
-                result = firstNumHead.val
-                firstNumHead = firstNumHead.next
-            elif secondNumHead:
-                result = secondNumHead.val
-                secondNumHead = secondNumHead.next
-            sumTail.next = ListNode((result + carry) % 10)
+        currentFirst = firstNumHead
+        currentSecond = secondNumHead
+        while currentFirst or currentSecond:
+            result = 0
+            if currentFirst:
+                result += currentFirst.val
+                currentFirst = currentFirst.next
+            if currentSecond:
+                result += currentSecond.val
+                currentSecond = currentSecond.next
+            sum_ = result + carry
+            sumTail.next = ListNode(sum_ % 10)
             sumTail = sumTail.next
-            if result + carry > 9:
-                carry = (result + carry) // 10
-            else:
-                carry = 0
+            carry = sum_ // 10
+            
         if carry > 0:
             sumTail.next = ListNode(carry)
         return sentinel.next
-            
         
 
 # Two pass solution
@@ -70,7 +67,7 @@ class Solution2:
 # time complexity: O(max(n, m))
 # space complexity: O(max(n, m))
 
-class Solution:
+class Solution3:
     def addTwoNumbers(self, firstNumHead: ListNode, secondNumHead: ListNode) -> ListNode:
         sum_ = self.addNumbers(firstNumHead, secondNumHead)
         return self.buildSumList(sum_)
@@ -78,19 +75,21 @@ class Solution:
     def addNumbers(self, firstNumHead, secondNumHead, base=10):
         sum_ = 0
         place = 0
-        while firstNumHead or secondNumHead:
-            if firstNumHead and secondNumHead:
-                firstValue = firstNumHead.val * (base ** place)
-                secondValue = secondNumHead.val * (base ** place)
+        currentFirst = firstNumHead
+        currentSecond = secondNumHead
+        while currentFirst or currentSecond:
+            if currentFirst and currentSecond:
+                firstValue = currentFirst.val * (base ** place)
+                secondValue = currentSecond.val * (base ** place)
                 result = firstValue + secondValue
-                firstNumHead = firstNumHead.next
-                secondNumHead = secondNumHead.next
-            elif firstNumHead:
-                result = firstNumHead.val * (base ** place)
-                firstNumHead = firstNumHead.next
-            elif secondNumHead:
-                result = secondNumHead.val * (base ** place)
-                secondNumHead = secondNumHead.next
+                currentFirst = currentFirst.next
+                currentSecond = currentSecond.next
+            elif currentFirst:
+                result = currentFirst.val * (base ** place)
+                currentFirst = currentFirst.next
+            elif currentSecond:
+                result = currentSecond.val * (base ** place)
+                currentSecond = currentSecond.next
             sum_ += result
             place += 1
         return sum_
