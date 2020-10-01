@@ -1,7 +1,11 @@
 """This file contains my solution for Leetcode problem 173: Binary Search Tree Iterator."""
 
 
+# time complexities
+# hasNext() - O(1)
+# next() - Amortized constants time
 
+# space complexity: O(h), where 'h' is the height of the tree
 class BSTIterator:
 
     def __init__(self, root: TreeNode):
