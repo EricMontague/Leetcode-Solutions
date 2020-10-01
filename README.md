@@ -96,6 +96,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 211: Add and Search Words Data Structure](../master/medium/problem_211_design_add_and_search_words_data_structure.py)
   - [Problem 328: Odd Even Linked List](../master/medium/problem_328_odd_even_linked_list.py)
   - [Problem 2: Add Two Numbers](../master/medium/problem_2_add_two_numbers.py)
+  - [Problem 173: Binary Search Tree Iterator](../master/medium/problem_173_binary_search_tree_iterator.py)
 </details>
 
 <br>
