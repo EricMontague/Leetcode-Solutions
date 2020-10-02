@@ -34,7 +34,6 @@ class Solution:
     def numUniqueEmails(self, emails: List[str]) -> int:
         unique_emails = set()
         number_of_emails = len(emails)
-        current_email = 0
         for index in range(number_of_emails):
             local_name, domain_name = emails[index].split("@")
             local_name_without_plus_sign = local_name.split("+")[0]
