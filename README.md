@@ -48,6 +48,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 572: Subtree of Another Tree](../master/easy/problem_572_subtree_of_another_tree.py)
   - [Problem 237: Delete Node in a Linked List](../master/easy/problem_237_delete_node_in_a_linked_list.py)
   - [Problem 896: Monotonic Array](../master/easy/problem_896_monotonic_array.py)
+  - [Problem 929: Unique Email Addresses](../master/easy/problem_929_unique_email_addresses.py)
 </details>
 
 
