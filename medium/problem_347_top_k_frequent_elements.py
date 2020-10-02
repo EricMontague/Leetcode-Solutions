@@ -39,7 +39,9 @@ class Solution:
 # Worst case is O(n ^ 2), due to picking a bad pivot in Quickselect
 
 # space complexity: O(n)
+import random
 from collections import Counter
+
 
 class Solution:
     def topKFrequent(self, elements: List[int], k: int) -> List[int]:
@@ -64,6 +66,7 @@ class Solution:
         return start
     
     def partition(self, elements, start, end, elementCounts):
+        self.randomizePivot(elements, start, end)
         pivotValueCount = elementCounts.get(elements[end])
         pivotIndex = start
         for index in range(start, end):
@@ -77,7 +80,14 @@ class Solution:
             elements[end], elements[pivotIndex]
         )
         return pivotIndex
-        
+    
+    def randomizePivot(self, elements, start, end):
+        randomPivotIndex = random.randint(start, end)
+        elements[randomPivotIndex], elements[end] = (
+            elements[end], elements[randomPivotIndex]
+        )
+    
+    
 
 
 # time complexity: O(n + klogn), where 'n' is the number of elements in the list and
