@@ -9,12 +9,22 @@ from collections import Counter
 
 class Solution:
     def topKFrequent(self, elements: List[int], k: int) -> List[int]:
+        frequencyMatrix = self.createFrequencyMatrix(len(elements))
         elementCounts = Counter(elements)
-        buckets = [[] for index in range(len(elements))]
+        self.groupElementsByFrequency(elementCounts, frequencyMatrix)
+        return self.getTopKFrequentElements(frequencyMatrix, k)
+    
+    def createFrequencyMatrix(self, numberOfRows):
+        frequencyMatrix = [[] for index in range(numberOfRows)]
+        return frequencyMatrix
+    
+    def groupElementsByFrequency(self, elementCounts, frequencyMatrix):
         for element, count in elementCounts.items():
-            buckets[count - 1].append(element)
+            frequencyMatrix[count - 1].append(element)
+    
+    def getTopKFrequentElements(self, frequencyMatrix, k):
         topKFrequentElements = []
-        for bucket in reversed(buckets):
+        for bucket in reversed(frequencyMatrix):
             for element in bucket:
                 if k == 0:
                     break
