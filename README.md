@@ -101,6 +101,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 173: Binary Search Tree Iterator](../master/medium/problem_173_binary_search_tree_iterator.py)
   - [Problem 347: Top K Frequent Elements](../master/medium/problem_347_top_k_frequent_elements.py)
   - [Problem 199: Binary Tree Right Side View](../master/medium/problem_199_binary_tree_right_side_view.py)
+  - [Problem 994: Rotting Oranges](../master/medium/problem_994_rotting_oranges.py)
+  - [Problem 79: Word Search](../master/medium/problem_79_word_search.py)
 </details>
 
 <br>
