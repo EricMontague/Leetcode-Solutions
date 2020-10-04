@@ -1,6 +1,13 @@
 """This file contains my solutions to Leetcode problem 79: Word Search."""
 
 
+# time complexity: O(mn * 4^k), where 'm' is the number of rows, 'n' is the number
+# of columns and 'k' is the length of the word
+# space complexity: O(nm)
+
+
+# source for time complexity analysis:
+# https://cs.stackexchange.com/questions/96626/whats-the-big-o-runtime-of-a-dfs-word-search-through-a-matrix
 class Solution:
 
     VISITED = "#"
@@ -65,10 +72,10 @@ class Solution:
         return False
     
     def word_exists(self, current_row, current_col, board, word, index):
+        if index == len(word):
+            return True
         if not self.is_valid_cell(current_row, current_col, board, word[index]):
             return False
-        if index == len(word) - 1:
-            return True
         current_character = board[current_row][current_col]
         board[current_row][current_col] = self.VISITED
          
