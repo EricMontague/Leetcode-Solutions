@@ -3,28 +3,47 @@
 #Overall time complexity: O(nm + k), where "n" is the number of rows, "m" is the number
 #of columns, and "k" is the total number of patches of land ("1" 's) in the grid
 #Overall space complexity: O(nm)
+class CellType:
+    
+    WATER = "0"
+    LAND = "1"
+    
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        numIslands = 0
+        number_of_islands = 0
         if not grid:
-            return numIslands
-        for row_index, row in enumerate(grid):
-            for col, value in enumerate(grid[row_index]):
-                if value == "1":
-                    numIslands += 1
-                    self.dfs(row_index, col, grid)
-        return numIslands
+            return number_of_islands
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        visited = [[False] * num_cols for row in range(num_rows)]
+        for row in range(num_rows):
+            for col in range(num_cols):
+                if grid[row][col] == CellType.LAND and not visited[row][col]:
+                    number_of_islands += 1
+                    self.explore_island(row, col, grid, visited)
+        return number_of_islands
     
-    def dfs(self, row, col, grid):
-        grid[row][col] = "<Visited>"
-        for num_row, num_col in self.getNeighbors(row, col, grid):
-            if grid[num_row][num_col] == "1":
-                self.dfs(num_row, num_col, grid)
-            
-    def getNeighbors(self, row, col, grid):
-        for num_row, num_col in [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]:
-            if num_row > - 1 and num_row < len(grid) and num_col > - 1 and num_col < len(grid[0]):
-                yield num_row, num_col
+    def explore_island(self, row, col, grid, visited):
+        if self.is_valid_cell(row, col, grid, visited):
+            visited[row][col] = True
+            self.explore_island(row + 1, col, grid, visited)
+            self.explore_island(row - 1, col, grid, visited)
+            self.explore_island(row, col + 1, grid, visited)
+            self.explore_island(row, col - 1, grid, visited)
+    
+    def is_valid_cell(self, row, col, grid, visited):
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        if (
+            row < num_rows
+            and row > -1
+            and col < num_cols
+            and col > -1
+            and grid[row][col] == CellType.LAND
+            and not visited[row][col]
+        ):
+            return True
+        return False
 
 
 #Alternative Depth First Search method
@@ -32,14 +51,58 @@ class Solution:
 #Overall space complexity of solution with ierative DFS is O(n + m), meaning that
 #the maximum space taken up on the stack is dependent on which is greater, the number of 
 #rows, or the number of columns.
-def dfs(self, row, col, grid):
+class CellType:
+    
+    WATER = "0"
+    LAND = "1"
+    
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        number_of_islands = 0
+        if not grid:
+            return number_of_islands
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        visited = [[False] * num_cols for row in range(num_rows)]
+        for row in range(num_rows):
+            for col in range(num_cols):
+                if grid[row][col] == CellType.LAND and not visited[row][col]:
+                    number_of_islands += 1
+                    self.explore_island(row, col, grid, visited)
+        return number_of_islands
+    
+    def explore_island(self, row, col, grid, visited):
         stack = [(row, col)]
         while stack:
-            coord = stack.pop()
-            grid[coord[0]][coord[1]] = "<Visited>"
-            for num_row, num_col in self.getNeighbors(coord[0], coord[1], grid):
-                if grid[num_row][num_col] == "1":
-                    stack.append((num_row, num_col))
+            current_row, current_col = stack.pop()
+            for neighbor_row, neighbor_col in self.get_neighbors(
+                current_row, current_col, grid
+            ):
+                if (
+                    not visited[neighbor_row][neighbor_col]
+                    and grid[neighbor_row][neighbor_col] == CellType.LAND
+                ):
+                    visited[neighbor_row][neighbor_col] = True
+                    stack.append((neighbor_row, neighbor_col))
+                    
+    
+    def get_neighbors(self, row, col, grid):
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        for neighbor_row, neighbor_col in [
+            (row + 1, col),
+            (row - 1, col),
+            (row, col + 1),
+            (row, col - 1)
+        ]:
+            if (
+                neighbor_row < num_rows
+                and neighbor_row > -1
+                and neighbor_col < num_cols
+                and neighbor_col > -1
+            ):
+                yield (neighbor_row, neighbor_col)
+        
 
 
 
