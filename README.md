@@ -105,6 +105,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 994: Rotting Oranges](../master/medium/problem_994_rotting_oranges.py)
   - [Problem 79: Word Search](../master/medium/problem_79_word_search.py)
   - [Problem 215: Kth Largest Element in An Array](../master/medium/problem_215_kth_largest_element_in_array.py)
+  - [Problem 61: Rotate List](../master/medium/problem_61_rotate_list.py)
 </details>
 
 <br>
