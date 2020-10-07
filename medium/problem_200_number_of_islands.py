@@ -110,70 +110,94 @@ class Solution:
 #Overall time complexity: O(nm * alpha), where alpha is a slow growing
 #constant equal to the inverse Ackermann function
 #Overall space complexity: O(nm)
+class CellType:
+    
+    WATER = "0"
+    LAND = "1"
+    
+
 class UnionFind:
     
-    def __init__(self, size):
-        self.parents = [0] * size
+    def __init__(self, size, num_components):
+        self.parents = [None] * size
         self.ranks = [0] * size
         self.size = size
-        self.num_components = 0
+        self.num_components = num_components
         self.make_set()
-        
+    
     def make_set(self):
-        for index in range(self.size):
+        for index in range(len(self.parents)):
             self.parents[index] = index
         
     def find(self, element):
         root = element
         while self.parents[root] != root:
             root = self.parents[root]
-        
-        #path compression
-        while self.parents[element] != root:
-            parent = self.parents[element]
-            self.parents[element] = root
-            element = parent
+            
+        current = element
+        while self.parents[current] != current:
+            parent = self.parents[current]
+            self.parents[current] = root
+            current = parent
         return root
     
     def union(self, element_one, element_two):
         root_one = self.find(element_one)
         root_two = self.find(element_two)
+        if root_one == root_two:
+            return
         
-        if root_one != root_two:
-            if self.ranks[root_one] > self.ranks[root_two]:
-                self.parents[root_two] = root_one
-            elif self.ranks[root_one] < self.ranks[root_two]:
-                self.parents[root_one] = root_two
-            elif self.ranks[root_one] == self.ranks[root_two]:
-                self.parents[root_one] = root_two
-                self.ranks[root_two] += 1
-            self.num_components -= 1
-
-
-
+        if self.ranks[root_one] < self.ranks[root_two]:
+            self.parents[root_one] = root_two
+        elif self.ranks[root_two] < self.ranks[root_one]:
+            self.parents[root_two] = root_one
+        else:
+            self.parents[root_one] = root_two
+            self.ranks[root_two] += 1
+        self.num_components -= 1
+        
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         if not grid:
             return 0
-        row_count = len(grid)
-        col_count = len(grid[0])
-        union_find = UnionFind(row_count * col_count)
-        self.merge_sets(union_find, grid, row_count, col_count)
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        num_land_patches = self.count_num_land_patches(grid, num_rows, num_cols)
+        union_find = UnionFind(num_rows * num_cols, num_land_patches)
+        for row in range(num_rows):
+            for col in range(num_cols):
+                if grid[row][col] == CellType.LAND:
+                    for neighbor_row, neighbor_col in self.get_neighbors(
+                        row, col, grid
+                    ):
+                        element_one = num_cols * row + col
+                        element_two = num_cols * neighbor_row + neighbor_col
+                        union_find.union(element_one, element_two)    
         return union_find.num_components
+
+    def count_num_land_patches(self, grid, num_rows, num_cols):
+        num_land_patches = 0
+        for row in range(num_rows):
+            for col in range(num_cols):
+                if grid[row][col] == CellType.LAND:
+                    num_land_patches += 1
+        return num_land_patches
         
-    def merge_sets(self, union_find, grid, row_count, col_count):
-        for row_index in range(row_count):
-            for col_index in range(col_count):
-                    if grid[row_index][col_index] == "1":
-                        union_find.num_components += 1
-                        for num_row, num_col in self.get_neighbors(row_index, col_index, grid):
-                            if grid[num_row][num_col] == "1":
-                                element_one = row_index * col_count + col_index
-                                element_two = num_row * col_count + num_col
-                                union_find.union(element_one, element_two)
-                    
     def get_neighbors(self, row, col, grid):
-        for num_row, num_col in [(row + 1, col), (row - 1, col), (row, col + 1), (row, col - 1)]:
-            if num_row > - 1 and num_row < len(grid) and num_col > - 1 and num_col < len(grid[0]):
-                yield num_row, num_col
-                
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        for neighbor_row, neighbor_col in [
+            (row + 1, col),
+            (row - 1, col),
+            (row, col + 1),
+            (row, col - 1)
+        ]:
+            if (
+                neighbor_row < num_rows
+                and neighbor_row > -1
+                and neighbor_col < num_cols
+                and neighbor_col > -1
+                and grid[neighbor_row][neighbor_col] == CellType.LAND
+            ):
+                yield (neighbor_row, neighbor_col)
+        
