@@ -1,135 +1,132 @@
 """This is my solution to Leetcode problem 207: Course Schedule."""
 
+# BFS Solution - Cycle Detection Algorithm
+# Credit: https://leetcode.com/problems/course-schedule/discuss/58537/AC-Python-topological-sort-52-ms-solution-O(V-%2B-E)-time-and-O(V-%2B-E)-space
 
-#Overall time complexity: O(V + E), where V is the number of vertices in the graph
-# and E is the number of edges in the graph. If this were a complete graph, 
+# time complexity: O(V + E), where 'V' is the number of prerequisite courses
+# and E is the number of courses that have prerequisites
+
+# space complexity: O(V + E)
+
+from collections import defaultdict, deque
+
+
+class Solution:
+    def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
+        if num_courses == 0 or not prerequisites:
+            return True
+
+        # convert to adjacency list to make BFS more efficient
+        prereq_adjacency_list = self.convert_edge_list_to_adjacency_list(prerequisites)
+
+        # count in degree of each vertex
+        prerequisite_counts = self.count_prerequisites(prerequisites, num_courses)
+
+        # enqueue all vertices with an in degree of 0
+        course_queue = self.get_starting_courses(prerequisite_counts)
+
+        # Perform BFS. If you are able to visit all vertices in the graph,
+        # then that means there are no cycles and you can take all courses
+        return self.can_take_all_courses(
+            prereq_adjacency_list, prerequisite_counts, course_queue
+        )
+
+    def convert_edge_list_to_adjacency_list(self, prerequisites):
+        prereq_adjacency_list = defaultdict(list)
+        for course, prerequisite in prerequisites:
+            prereq_adjacency_list[prerequisite].append(course)
+        return prereq_adjacency_list
+
+    def count_prerequisites(self, prerequisite_edge_list, num_courses):
+        prerequisite_counts = [0] * num_courses
+        for course, prerequisite in prerequisite_edge_list:
+            prerequisite_counts[course] += 1
+        return prerequisite_counts
+
+    def get_starting_courses(self, prerequisite_counts):
+        course_queue = deque()
+        for index, num_prereqs in enumerate(prerequisite_counts):
+            if num_prereqs == 0:
+                course_queue.append(index)
+        return course_queue
+
+    def can_take_all_courses(self, prereq_adjacency_list, prereq_counts, queue):
+        num_courses_taken = 0
+        while queue:
+            taken_course = queue.popleft()
+            num_courses_taken += 1
+            for course in prereq_adjacency_list[taken_course]:
+                prereq_counts[course] -= 1
+                if prereq_counts[course] == 0:
+                    queue.append(course)
+        return num_courses_taken == len(prereq_adjacency_list)
+
+
+# DFS Solution - Cycle Detection Algorithm
+# Overall time complexity: O(V + E), where V is the number of vertices in the graph
+# and E is the number of edges in the graph. If this were a complete graph,
 # then this could be O(V^2) because E = V ^2 in a complete graph
 
-#Overall space complexity: O(V + E)
+# Overall space complexity: O(V + E)
 
 
-#Enumeration class used for graph coloring
-class State:
+class NodeState:
+
     UNVISITED = 0
     VISITING = 1
     VISITED = 2
 
 
 class Solution:
-    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        states = [0] * numCourses
-        adjacency_list = self.buildAdjList(numCourses, prerequisites)
-        for course in range(numCourses):
-            if states[course] == State.UNVISITED:
-                if self.hasCycle(states, course, adjacency_list):
+    def canFinish(self, num_courses: int, prerequisites: List[List[int]]) -> bool:
+        if num_courses == 0 or not prerequisites:
+            return True
+        prereq_adjacency_list = self.convert_edge_list_to_adjacency_list(prerequisites)
+        node_states = [NodeState.UNVISITED] * num_courses
+
+        for course in range(num_courses):
+            if node_states[course] == NodeState.UNVISITED:
+                if not self.can_take_all_courses(
+                    course, prereq_adjacency_list, node_states
+                ):
                     return False
         return True
-    
-    def buildAdjList(self, numCourses, prerequisites):
-        adjacency_list = [[] for course in range(numCourses)]
+
+    def convert_edge_list_to_adjacency_list(self, prerequisites):
+        prereq_adjacency_list = defaultdict(list)
         for course, prerequisite in prerequisites:
-            adjacency_list[prerequisite].append(course)
-        return adjacency_list
-    
-    def hasCycle(self, states, course, prerequisites):
-        states[course] = State.VISITING
-        for nextCourse in prerequisites[course]:
-            if states[nextCourse] == State.UNVISITED:
-                if self.hasCycle(states, nextCourse, prerequisites):
-                    return True
-            if states[nextCourse] == State.VISITING:
-                return True
-        states[course] = State.VISITED
-        return False
+            prereq_adjacency_list[prerequisite].append(course)
+        return prereq_adjacency_list
+
+    def can_take_all_courses(self, prerequisite, prereq_adjacency_list, node_states):
+        node_states[prerequisite] = NodeState.VISITING
+        for course in prereq_adjacency_list[prerequisite]:
+            if node_states[course] == NodeState.UNVISITED:
+                if not self.can_take_all_courses(
+                    course, prereq_adjacency_list, node_states
+                ):
+                    return False
+            elif node_states[course] == NodeState.VISITING:
+                return False
+        node_states[prerequisite] = NodeState.VISITED
+        return True
 
 
-
-# Below is an iterative version of the method, hasCycle
+# Below is an iterative version of the method, can_take_call_courses()
 # Writing an iterative version gives you the same time complexity
 # as well as space complexity
-def hasCycle(states, course, prerequisites):
-    stack = []
-    stack.append((course, False))
-    states[course] = State.VISITING
-    while stack:
-        currentCourse, finished = stack.pop()
-        if finished:
-            states[currentCourse] = State.VISITED
-        else:
-            stack.append((currentCourse, True))
-            for nextCourse in prerequisites[currentCourse]:
-                if states[nextCourse] == State.UNVISITED:
-                    stack.append((nextCourse, False))
-                    states[currentCourse] = State.VISITING
-                if states[nextCourse] == State.VISITING:
-                    return True
-    return False
-
-
-
-
-
-# Another solution that uses BFS
-# Overall time complexity: O(V + E)
-# Overall space complexity: O(V + E)
-# Credit: https://leetcode.com/problems/course-schedule/discuss/58537/AC-Python-topological-sort-52-ms-solution-O(V-%2B-E)-time-and-O(V-%2B-E)-space
-from collections import deque
-
-
-class Solution:
-    def canFinish(self, numNodes, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: bool
-        """
-        
-        visited = set()
-        graph, inDegrees = self.buildGraph(numNodes, edges)
-        queue = self.buildQueue(inDegrees)
-        self.bfs(queue, visited, inDegrees, graph)
-        return len(visited) == numNodes
-    
-    def buildGraph(self, numNodes, edges):
-        # construct graph
-        
-        # key represents a prerequisites
-        # value is a set that represents the courses that come after that prereq
-        graph = {node: set() for node in range(numNodes)} #outDegrees
-        
-        #key represents a course
-        #value represents the number of prerequisites needed to take a course
-        inDegrees = {node:0 for node in range(numNodes)}
-        for edge in edges:
-            graph[edge[1]].add(edge[0])
-            inDegrees[edge[0]] += 1
-        return graph, inDegrees
-    
-    def buildQueue(self, inDegrees):
-        # find nodes whose out degree == 0
-        # This represents finding all classes which don't have any
-        # prerequisites
-        queue = deque()
-        for node, inDegree in inDegrees.items():
-            if inDegree == 0:
-                queue.append(node)
-        return queue
-    
-    def bfs(self, queue, visited, inDegrees, graph):
-        # loop all nodes whose out degree == 0
-        
-        # adding a node to the queue represents scheduling a course, which may
-        # also be a prerequisite to other courses
-        # while adding to it visited is marking it as taken
-        # afterwards you decrement the number of prereqs needed
-        # to take each course that is a neighbor of that prereq in the graph
-        # if there are no more prereqs left to take, then you add that class(node)
-        # to the queue (schedule it)
-        while queue:
-            node = queue.popleft()
-            visited.add(node)
-            for neighbor in graph[node]:
-                inDegrees[neighbor] -= 1
-                if inDegrees[neighbor] == 0:
-                    queue.append(neighbor)
-        
+def can_take_all_courses(self, course, prereq_adjacency_list, node_states):
+        stack = [course]
+        while stack:
+            current_course = stack.pop()
+            if node_states[current_course] == NodeState.UNVISITED:
+                node_states[current_course] = NodeState.VISITING
+                stack.append(current_course)
+            elif node_states[current_course] == NodeState.VISITING:
+                node_states[current_course] = NodeState.VISITED
+            for next_course in prereq_adjacency_list[current_course]:
+                if node_states[next_course] == NodeState.UNVISITED:
+                    stack.append(next_course)
+                elif node_states[next_course] == NodeState.VISITING:
+                    return False
+        return True
