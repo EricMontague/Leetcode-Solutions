@@ -1,5 +1,61 @@
 """This contains my solutions to Leetcode problem 200."""
 
+
+# BFS Solution
+# time complexity:
+# space complexity: O(max(n, m))
+from collections import deque
+
+class CellType:
+    
+    WATER = "0"
+    LAND = "1"
+    
+class Solution:
+    def numIslands(self, grid: List[List[str]]) -> int:
+        num_islands = 0
+        if not grid:
+            return num_islands
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        visited = [[False] * num_cols for row in range(num_rows)]
+        for row in range(num_rows):
+            for col in range(num_cols):
+                if grid[row][col] == CellType.LAND and not visited[row][col]:
+                    num_islands += 1
+                    self.explore_island(row, col, grid, visited)
+        return num_islands
+    
+    def explore_island(self, row, col, grid, visited):
+        visited[row][col] = True
+        queue = deque([(row, col)])
+        while queue:
+            current_row, current_col = queue.popleft()
+            for neighbor_row, neighbor_col in self.get_neighbors(
+                current_row, current_col, grid
+            ):
+                if not visited[neighbor_row][neighbor_col]:
+                    visited[neighbor_row][neighbor_col] = True
+                    queue.append((neighbor_row, neighbor_col))
+    
+    def get_neighbors(self, row, col, grid):
+        num_rows = len(grid)
+        num_cols = len(grid[0])
+        for neighbor_row, neighbor_col in [
+            (row + 1, col),
+            (row - 1, col),
+            (row, col + 1),
+            (row, col - 1)
+        ]:
+            if (
+                neighbor_row < num_rows
+                and neighbor_row > -1
+                and neighbor_col < num_cols
+                and neighbor_col > - 1
+                and grid[neighbor_row][neighbor_col] == CellType.LAND
+            ):
+                yield neighbor_row, neighbor_col
+
 #Overall time complexity: O(nm + k), where "n" is the number of rows, "m" is the number
 #of columns, and "k" is the total number of patches of land ("1" 's) in the grid
 #Overall space complexity: O(nm)
@@ -200,4 +256,8 @@ class Solution:
                 and grid[neighbor_row][neighbor_col] == CellType.LAND
             ):
                 yield (neighbor_row, neighbor_col)
+        
+
+
+
         
