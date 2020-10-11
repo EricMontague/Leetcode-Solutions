@@ -1,6 +1,40 @@
 """This file contains my solutions to Leetcode problem 973: K Closest Points to Origin."""
 
 
+# Min Heap Solution
+# time complexity: O(n + klogn)
+# space complexity: O(n)
+
+import heapq, math
+
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        if k == 0 or not points:
+            return []
+        min_heap = self.build_min_heap(points, k)
+        return self.get_k_closest_points(min_heap, k)
+
+    def build_min_heap(self, points, k):
+        min_heap = []
+        source = [0, 0]
+        for point in points:
+            distance = self.calculate_euclidean_distance(source, point)
+            min_heap.append((distance, point))
+        heapq.heapify(min_heap)
+        return min_heap
+
+    def calculate_euclidean_distance(self, source, destination):
+        return math.sqrt(
+            (destination[0] - source[0]) ** 2 + (destination[1] - source[1]) ** 2
+        )
+    
+    def get_k_closest_points(self, min_heap, k):
+        k_closest_points = []
+        for num in range(k):
+            distance, point = heapq.heappop(min_heap)
+            k_closest_points.append(point)
+        return k_closest_points
 
 # Max Heap Solution
 
