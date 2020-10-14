@@ -108,6 +108,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 61: Rotate List](../master/medium/problem_61_rotate_list.py)
   - [Problem 973: K Closest Points to Origin](../master/medium/problem_973_k_closest_points_to_origin.py)
   - [Problem 785: Is Graph Bipartite?](../master/medium/problem_785_is_graph_bipartite.py)
+  - [Problem 886: Possible Bipartition](../master/medium/problem_886_possible_bipartition.py)
 </details>
 
 <br>
