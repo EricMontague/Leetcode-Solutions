@@ -50,6 +50,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 896: Monotonic Array](../master/easy/problem_896_monotonic_array.py)
   - [Problem 929: Unique Email Addresses](../master/easy/problem_929_unique_email_addresses.py)
   - [Problem 108: Converted Sorted Array to BST](../master/easy/problem_108_convert_sorted_array_to_binary_search_tree.py)
+  - [Problem 1042: Flower Planting With No Adjacent](../master/easy/problem_1042_flower_planting_with_no_adjacent.py)
 </details>
 
 
