@@ -110,6 +110,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 973: K Closest Points to Origin](../master/medium/problem_973_k_closest_points_to_origin.py)
   - [Problem 785: Is Graph Bipartite?](../master/medium/problem_785_is_graph_bipartite.py)
   - [Problem 886: Possible Bipartition](../master/medium/problem_886_possible_bipartition.py)
+  - [Problem 990: Satisfiability of Equality Equations](../master/medium/problem_990_satisfiability_of_equality_equations.py)
 </details>
 
 <br>
@@ -124,6 +125,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 239: Sliding Window Maximum](../master/hard/problem_239_sliding_window_maximum.py)
   - [Problem 297: Serialize and Deserialize Binary Tree](../master/hard/problem_297_serialize_and_deserialize_binary_tree.py)
   - [Problem 76: Minimum Window Substring](../master/hard/problem_76_minimum_window_substring.py)
+  - [Problem 295: Find Median From Data Stream](../master/hard/problem_295_find_median_from_data_stream.py)
 </details>
 
 
