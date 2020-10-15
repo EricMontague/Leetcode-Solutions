@@ -103,3 +103,57 @@ class Solution:
                     if equation[0] in component and equation[3] in component:
                         return False
         return True
+
+
+
+# Another DFS Solution using graph coloring
+# time complexity: O(n), where 'n' is the number of equations
+# space complexity: O(1)
+
+class Solution:
+    def equationsPossible(self, equations: List[str]) -> bool:
+        graph = self.build_graph(equations)
+        components_by_color = self.find_connected_components(graph)
+        return self.are_equations_possible(equations, components_by_color)
+        
+    def build_graph(self, equations):
+        graph = [[] for num in range(26)]
+        for equation in equations:
+            char_one = ord(equation[0]) - ord("a")
+            char_two = ord(equation[3]) - ord("a")
+            if equation[1] == "=":    
+                graph[char_one].append(char_two)
+                graph[char_two].append(char_one)
+        return graph
+        
+    def find_connected_components(self, graph):
+        color = 0
+        colors = [None] * 26
+        for node in range(26):
+            if colors[node] is None:
+                color += 1
+                self.color_component(node, graph, colors, color)
+        return colors
+    
+    def color_component(self, node, graph, colors, current_color):
+        colors[node] = current_color
+        for neighbor in graph[node]:
+            if colors[neighbor] is None:
+                self.color_component(
+                    neighbor, 
+                    graph, 
+                    colors,
+                    current_color
+                )
+         
+     
+    def are_equations_possible(self, equations, components_by_color):
+        for equation in equations:
+            if equation[1] == "!":
+                char_one = ord(equation[0]) - ord("a")
+                char_two = ord(equation[3]) - ord("a")
+                if (
+                    components_by_color[char_one] ==                                         components_by_color[char_two]
+                ):
+                        return False
+        return True
