@@ -21,10 +21,8 @@ class Solution:
         clones[current_node.val] = new_node
         for neighbor in current_node.neighbors:
             if neighbor.val not in clones:
-                child_copy = self.copy_graph(neighbor, clones)
-                new_node.neighbors.append(child_copy)
-            else:
-                new_node.neighbors.append(clones[neighbor.val])
+                child_copy = self.copy_graph(neighbor, clones)    
+            new_node.neighbors.append(clones[neighbor.val])
         return new_node
 
 
@@ -34,19 +32,17 @@ class Solution:
     def cloneGraph(self, source: 'Node') -> 'Node':
         if source is None:
             return source
-        clones = {}
+        visited = {}
         new_source = Node(source.val, [])
-        clones[source.val] = new_source
+        visited[source.val] = new_source
         stack = [source]
         while stack:
             node = stack.pop()
             for neighbor in node.neighbors:
-                if neighbor.val not in clones:
-                    clones[neighbor.val] = Node(neighbor.val, [])
-                    clones[node.val].neighbors.append(clones[neighbor.val])
+                if neighbor.val not in visited:
+                    visited[neighbor.val] = Node(neighbor.val, [])
                     stack.append(neighbor)
-                else:
-                    clones[node.val].neighbors.append(clones[neighbor.val])
+                visited[node.val].neighbors.append(visited[neighbor.val])
         return new_source
 
 
@@ -71,8 +67,6 @@ class Solution:
             for neighbor in node.neighbors:
                 if neighbor.val not in clones:
                     clones[neighbor.val] = Node(neighbor.val, [])
-                    clones[node.val].neighbors.append(clones[neighbor.val])
                     queue.append(neighbor)
-                else:
-                    clones[node.val].neighbors.append(clones[neighbor.val])
+                clones[node.val].neighbors.append(clones[neighbor.val])
         return new_source
