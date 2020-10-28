@@ -7,6 +7,42 @@ class Solution:
     def numBusesToDestination(self, routes: List[List[int]], start: int, end: int) -> int:
         if not routes or start == end:
             return 0
+        stop_to_bus_mapping = self.create_stop_to_bus_mapping(routes)
+        num_buses = 0
+        queue = deque([start])
+        visited = set()
+        while queue:
+            num_buses += 1
+            previous_stops = len(queue)
+            for i in range(previous_stops):
+                current_stop = queue.popleft()
+                for bus in stop_to_bus_mapping[current_stop]:
+                    if bus not in visited:
+                        visited.add(bus)
+                        for stop in routes[bus]:
+                            if stop == end:
+                                return num_buses
+                            queue.append(stop)
+        return -1
+    
+    def create_stop_to_bus_mapping(self, routes):
+        stop_to_bus_mapping = defaultdict(list)
+        for bus, stops in enumerate(routes):
+            for stop in stops:
+                stop_to_bus_mapping[stop].append(bus)
+        return stop_to_bus_mapping
+    
+    
+    
+
+
+
+from collections import deque, defaultdict
+
+class Solution:
+    def numBusesToDestination(self, routes: List[List[int]], start: int, end: int) -> int:
+        if not routes or start == end:
+            return 0
         route_stop_mapping, stop_route_mapping = self.create_mappings(routes)
         if start not in stop_route_mapping or end not in stop_route_mapping:
             return 0
