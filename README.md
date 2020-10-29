@@ -113,6 +113,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 990: Satisfiability of Equality Equations](../master/medium/problem_990_satisfiability_of_equality_equations.py)
   - [Problem 875: Koko Eating Bananas](../master/medium/problem_875_koko_eating_bananas.py)
   - [Problem 767: Reorganize String](../master/medium/problem_767_reorganize_string.py)
+  - [Problem House Robber 198](../master/easy/problem_198_house_robber.py)
 </details>
 
 <br>
