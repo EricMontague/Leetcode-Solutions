@@ -51,6 +51,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 929: Unique Email Addresses](../master/easy/problem_929_unique_email_addresses.py)
   - [Problem 108: Converted Sorted Array to BST](../master/easy/problem_108_convert_sorted_array_to_binary_search_tree.py)
   - [Problem 1042: Flower Planting With No Adjacent](../master/easy/problem_1042_flower_planting_with_no_adjacent.py)
+  - [Problem 198: House Robber](../master/easy/problem_198_house_robber.py)
 </details>
 
 
@@ -113,7 +114,6 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 990: Satisfiability of Equality Equations](../master/medium/problem_990_satisfiability_of_equality_equations.py)
   - [Problem 875: Koko Eating Bananas](../master/medium/problem_875_koko_eating_bananas.py)
   - [Problem 767: Reorganize String](../master/medium/problem_767_reorganize_string.py)
-  - [Problem House Robber 198](../master/easy/problem_198_house_robber.py)
 </details>
 
 <br>
