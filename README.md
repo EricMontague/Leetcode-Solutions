@@ -116,6 +116,9 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 990: Satisfiability of Equality Equations](../master/medium/problem_990_satisfiability_of_equality_equations.py)
   - [Problem 875: Koko Eating Bananas](../master/medium/problem_875_koko_eating_bananas.py)
   - [Problem 767: Reorganize String](../master/medium/problem_767_reorganize_string.py)
+  - [Problem 322: Coin Change](../master/medium/problem_322_coin_change.py)
+  - [Problem 518: Coin Change 2](../master/medium/problem_518_coin_change_2.py)
+  - [Problem 34: Find First and Last Position of Element in Sorted Array](../master/medium/problem_34_find_first_and_last_position_of_element_in_sorted_array.py)
 </details>
 
 <br>
