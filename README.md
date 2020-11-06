@@ -119,6 +119,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 322: Coin Change](../master/medium/problem_322_coin_change.py)
   - [Problem 518: Coin Change 2](../master/medium/problem_518_coin_change_2.py)
   - [Problem 34: Find First and Last Position of Element in Sorted Array](../master/medium/problem_34_find_first_and_last_position_of_element_in_sorted_array.py)
+  - [Problem 91: Decode Ways](../master/medium/problem_91_decode_ways.py)
+  - [Problem 78: Subsets](../master/medium/problem_78_subsets.py)
 </details>
 
 <br>
