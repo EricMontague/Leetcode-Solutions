@@ -121,6 +121,8 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 34: Find First and Last Position of Element in Sorted Array](../master/medium/problem_34_find_first_and_last_position_of_element_in_sorted_array.py)
   - [Problem 91: Decode Ways](../master/medium/problem_91_decode_ways.py)
   - [Problem 78: Subsets](../master/medium/problem_78_subsets.py)
+  - [Problem 39: Combination Sum](../master/medium/problem_39_combination_sum.py)
+  - [Problem 300: Longest Increasing Subsequence](../master/medium/problem_300_longest_increasing_subsequence.py)
 </details>
 
 <br>
