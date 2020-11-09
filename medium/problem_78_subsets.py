@@ -31,3 +31,6 @@ class Solution:
             self.build_subsets(nums, index - 1, left_subset, subsets)
             self.build_subsets(nums, index - 1, right_subset, subsets)
             
+    
+
+
