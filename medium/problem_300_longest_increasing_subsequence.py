@@ -31,7 +31,8 @@ class Solution:
         memo[i] = longest
         return longest
 
-# Bottom up with Memoization
+
+# Bottom up with Memoization going backwards
 # time complexity: O(n^ 2), where 'n' is the length of nums
 # space complexity: O(n)
 class Solution:
@@ -50,3 +51,27 @@ class Solution:
                     )
                    
         return longest_increasing_subsequence
+
+
+# Bottom up with Memoization going forwardss
+# time complexity: O(n^ 2), where 'n' is the length of nums
+# space complexity: O(n)
+class Solution:
+        
+    def lengthOfLIS(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        longest = 1
+        memo = [1] * len(nums)
+        for end in range(1, len(nums)):
+            for start in range(end):
+                if nums[end] > nums[start]:
+                    memo[end] = max(
+                        memo[end],
+                        memo[start] + 1
+                    )
+                    longest = max(
+                        longest,
+                        memo[end]
+                    )
+        return longest
