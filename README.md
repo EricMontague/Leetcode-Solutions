@@ -123,6 +123,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 78: Subsets](../master/medium/problem_78_subsets.py)
   - [Problem 39: Combination Sum](../master/medium/problem_39_combination_sum.py)
   - [Problem 300: Longest Increasing Subsequence](../master/medium/problem_300_longest_increasing_subsequence.py)
+  - [Problem 63: Unique Paths II](../master/medium/problem_63_unique_paths_2.py)
 </details>
 
 <br>
