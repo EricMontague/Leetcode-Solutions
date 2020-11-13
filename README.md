@@ -140,6 +140,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 76: Minimum Window Substring](../master/hard/problem_76_minimum_window_substring.py)
   - [Problem 295: Find Median From Data Stream](../master/hard/problem_295_find_median_from_data_stream.py)
   - [Problem 815: Bus Stops](../master/hard/problem_815_bus_routes.py)
+  - [Problem 980: Unique Paths III](../master/hard/problem_980_unique_paths3.py)
 </details>
 
 
