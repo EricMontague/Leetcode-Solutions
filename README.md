@@ -124,6 +124,9 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 39: Combination Sum](../master/medium/problem_39_combination_sum.py)
   - [Problem 300: Longest Increasing Subsequence](../master/medium/problem_300_longest_increasing_subsequence.py)
   - [Problem 63: Unique Paths II](../master/medium/problem_63_unique_paths_2.py)
+  - [Problem 55: Jump Game](../master/medium/problem_55_jump_game.py)
+  - [Problem 213: House Robber II](../master/medium/problem_213_house_robber_2.py)
+  - [Problem 337: House Robber III](../master/medium/problem_337_house_robber_3.py)
 </details>
 
 <br>
