@@ -54,7 +54,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 198: House Robber](../master/easy/problem_198_house_robber.py)
   - [Problem 746: Min Cost Climbing Stairs](../master/easy/problem_746_min_cost_climbing_stairs.py)
   - [Problem 70: Climbing Stairs](../master/easy/problem_70_climbing_stairs.py)
-  = [Problem 733: Flood Fill](../master/easy/problem_733_flood_fill.py)
+  - [Problem 733: Flood Fill](../master/easy/problem_733_flood_fill.py)
 </details>
 
 
