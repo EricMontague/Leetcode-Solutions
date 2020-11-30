@@ -55,6 +55,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 746: Min Cost Climbing Stairs](../master/easy/problem_746_min_cost_climbing_stairs.py)
   - [Problem 70: Climbing Stairs](../master/easy/problem_70_climbing_stairs.py)
   - [Problem 733: Flood Fill](../master/easy/problem_733_flood_fill.py)
+  - [Problem 112: Path Sum](../master/easy/problem_112_path_sum.js)
 </details>
 
 
