@@ -83,3 +83,46 @@ class Solution:
                     j + 1
                 )
                 current_subset.pop()
+
+
+# Another Backtracking solution
+# This solution models out the idea that for each element in
+# the set, you can either include it in the subset, or you choose
+# not to include it in the subset. Each recursive call models 
+# the possible subsets you can generate had you decided to include or
+# not include a particular element in a subset
+
+
+# time complexity: O(n * 2^n), where 'n' is the length os nums
+# space complexity: O(n * 2^n)
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        subsets = []
+        current_subset = []
+        start_index = 0
+        self.generate_subsets(
+            nums, 
+            start_index,
+            current_subset,
+            subsets
+        )
+        return subsets
+    
+    def generate_subsets(self, nums, index, current_subset, subsets):
+        if index >= len(nums):
+            subsets.append(current_subset.copy())
+        else:
+            current_subset.append(nums[index])
+            self.generate_subsets(
+                nums,
+                index + 1,
+                current_subset,
+                subsets
+            )
+            current_subset.pop()
+            self.generate_subsets(
+                nums,
+                index + 1,
+                current_subset,
+                subsets
+            )
