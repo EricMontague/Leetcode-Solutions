@@ -132,6 +132,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 17: Letter Combinations of a Phone Number](../master/medium/problem_17_letter_combinations_of_a_phone_number.py)
   - [Problem 129: Sum Root to Leaf Numbers](../master/medium/problem_129_sum_root_to_leaf_numbers.py)
   - [Problem 46: Permutations](../master/medium/problem_46_permutations.py)
+  - [Problem 47; Permutations II](../master/medium/problem_47_permutations_2.py)
 </details>
 
 <br>
