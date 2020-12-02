@@ -133,6 +133,9 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 129: Sum Root to Leaf Numbers](../master/medium/problem_129_sum_root_to_leaf_numbers.py)
   - [Problem 46: Permutations](../master/medium/problem_46_permutations.py)
   - [Problem 47; Permutations II](../master/medium/problem_47_permutations_2.py)
+  - [Problem 784: Letter Case Permutations](../master/medium/problem_784_letter_case_permutation.py)
+  = [Problem 90: Subsets II](../master/medium/problem_90_subsets2.py)
+  
 </details>
 
 <br>
