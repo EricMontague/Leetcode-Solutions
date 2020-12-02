@@ -1,7 +1,7 @@
 """This file contains my solutions to Leetcode problem 784."""
 
 
-
+# Backtracking Solution
 # time complexity: O(N * 2^N), where 'n' is the length of the string
 # space complexity: O(N * 2^N)
 class Solution:
@@ -33,6 +33,7 @@ class Solution:
                 current_permutation.pop()
     
 
+# BFS Solution
 # time complexity: O(N * 2^N), where 'n' is the length of the string
 # space complexity: O(N * 2^N)
 class Solution:
@@ -51,3 +52,28 @@ class Solution:
                     new_combinations.append(new_combination_upper)
             combinations = new_combinations
         return combinations
+
+
+
+# Iterative DFS Solution
+# time complexity: O(N * 2^N), where 'n' is the length of the string
+# space complexity: O(N * 2^N)
+class Solution:
+    def letterCasePermutation(self, string: str) -> List[str]:
+        if not string:
+            return [""]
+        combinations = []
+        stack = [("", 0)]
+        while stack:
+            combination, index = stack.pop()
+            if index == len(string):
+                combinations.append(combination)
+            else:
+                if string[index].isdigit():
+                    stack.append((combination + string[index], index + 1))
+                else:
+                    stack.append((combination + string[index].upper(), index + 1))
+                    stack.append((combination + string[index].lower(), index + 1))
+        return combinations
+                
+                
