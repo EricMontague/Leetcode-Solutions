@@ -69,18 +69,18 @@ class Solution:
             self.generate_subsets(nums, subsets, [], subset_size, 0)
         return subsets
     
-    def generate_subsets(self, nums, subsets, current_subset, size, i):
+    def generate_subsets(self, nums, subsets, current_subset, size, start):
         if size == 0:
             subsets.append(current_subset[:])
         else:
-            for j in range(i, len(nums)):
-                current_subset.append(nums[j])
+            for end in range(start, len(nums)):
+                current_subset.append(nums[end])
                 self.generate_subsets(
                     nums,
                     subsets,
                     current_subset,
                     size - 1,
-                    j + 1
+                    end + 1
                 )
                 current_subset.pop()
 
