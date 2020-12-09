@@ -56,6 +56,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 70: Climbing Stairs](../master/easy/problem_70_climbing_stairs.py)
   - [Problem 733: Flood Fill](../master/easy/problem_733_flood_fill.py)
   - [Problem 112: Path Sum](../master/easy/problem_112_path_sum.js)
+  - [Problem 897: Increasing Order Search Tree](../master/easy/problem_897_increasing_order_search_tree.py)
 </details>
 
 
@@ -134,7 +135,14 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 46: Permutations](../master/medium/problem_46_permutations.py)
   - [Problem 47; Permutations II](../master/medium/problem_47_permutations_2.py)
   - [Problem 784: Letter Case Permutations](../master/medium/problem_784_letter_case_permutation.py)
-  = [Problem 90: Subsets II](../master/medium/problem_90_subsets2.py)
+  - [Problem 90: Subsets II](../master/medium/problem_90_subsets2.py)
+  - [Problem 131: Palindrome Partition](../master/medium/problem_131_palindrome_partitioning.py)
+  - [Problem 1492: Kth Factor of N](../master/medium/problem_1492_the_kth_factor_of_n.py)
+  - [Problem 1679: Max Number of K Sum Pairs](../master/medium/problem_1679_max_number_of_k_sum_pairs.py)
+  - [Problem 22: Generate Parentheses](../master/medium/problem_22_generate_parentheses.py)
+  - [Problem 285: Inorder Successor of BST](../master/medium/problem_285_inorder_successor_of_bst.py)
+  - [Problem 320: Generalized Abbreviations](../master/medium/problem_320_generalized_abbreviation.py)
+  - [Problem 526: Beautiful Arrangement](../master/medium/problem_526_beautiful_arrangement.py)
   
 </details>
 
