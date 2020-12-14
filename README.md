@@ -144,6 +144,7 @@ As I'm preparing in the process of preparing for coding interviews, I wanted to 
   - [Problem 320: Generalized Abbreviations](../master/medium/problem_320_generalized_abbreviation.py)
   - [Problem 526: Beautiful Arrangement](../master/medium/problem_526_beautiful_arrangement.py)
   - [Problem 77: Combinations](../master/medium/problem_77_combinations.py)
+  - [Problem 216: Combination Sum III](../master/medium/problem_216_combination_sum3.py)
   
 </details>
 
